@@ -155,7 +155,7 @@ def round_corners_of_all_images(directory=None):
         new_image.save(new_image_filename)
 
 def robot_mask_all_images(directory=None):
-    """ Saves a modfied version of each image in directory.
+    """ Saves a modified version of each image in directory.
 
     Uses current directory if no directory is specified.
     Places images in subdirectory 'unique', creating it if it does not exist.
@@ -181,7 +181,7 @@ def robot_mask_all_images(directory=None):
         print(n)
         filename, filetype = os.path.splitext(file_list[n])
 
-        # Cut ou the robot masks for the current image
+        # Cuts out the robot masks for the current image
         curr_image = image_list[n]
         new_image = robot_one_image(curr_image)
 
