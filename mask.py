@@ -58,7 +58,7 @@ def something_one_image(original_image, percent_of_side=.3):
     # start with transparent mask
     width,height = original_image.size
     robot_mask = PIL.Image.new('RGBA', (width, height), (127, 0, 127, 0))
-    drawing_layer = PIL.ImageDraw.Draw(rounded_mask)
+    drawing_layer = PIL.ImageDraw.Draw(robot_mask)
 
     # draws the ellipse for the head
     drawing_layer.ellipse((0, int(height * 0.03), width, int(height * 0.3)), fill=(0, 127, 127, 255))

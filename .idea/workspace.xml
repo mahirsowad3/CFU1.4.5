@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d6eac15-1bff-49e4-9b43-c70a5da2b5c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mask.py" beforeDir="false" afterPath="$PROJECT_DIR$/mask.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unique/Abby_Wambach.png" beforeDir="false" afterPath="$PROJECT_DIR$/unique/Abby_Wambach.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unique/Beyonce.png" beforeDir="false" afterPath="$PROJECT_DIR$/unique/Beyonce.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unique/basketball.png" beforeDir="false" afterPath="$PROJECT_DIR$/unique/basketball.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mask.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="103">
+              <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -232,8 +228,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mask.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="103">
+          <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
