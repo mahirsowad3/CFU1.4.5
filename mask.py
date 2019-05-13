@@ -57,18 +57,34 @@ def something_one_image(original_image, percent_of_side=.3):
 
     # start with transparent mask
     width,height = original_image.size
-    rounded_mask = PIL.Image.new('RGBA', (width, height), (127, 0, 127, 0))
+    robot_mask = PIL.Image.new('RGBA', (width, height), (127, 0, 127, 0))
     drawing_layer = PIL.ImageDraw.Draw(rounded_mask)
 
-    # Draw four filled circles of opaqueness
-    drawing_layer.ellipse((0, height/8, width, height/3), fill=(0, 127, 127, 255))  #makes the circle at the
+    # draws the ellipse for the head
+    drawing_layer.ellipse((0, int(height * 0.03), width, int(height * 0.3)), fill=(0, 127, 127, 255))
+
+    #draws the rectangle for the body
+    drawing_layer.rectangle((int(width * 0.25), int(height * 0.3), int(width * 0.75), int(height * 0.75)),
+                            fill=(0, 127, 127, 255))
+
+    #draws the line for left arm
+    drawing_layer.line((int(width * 0.25), int(height * 0.35), int(width * 0.05), int(height * 0.70)),
+                       fill=(0, 127, 127, 255), width= int(min(width, height) * 0.1))
+
+    #draws the line for the right arm
+    drawing_layer.line((int(width * 0.75), int(height * 0.35), int(width * 0.95), int(height * 0.70)),
+                       fill=(0, 127, 127, 255), width=int(min(width, height) * 0.1))
+
+    #draws the triangle for the base
+    drawing_layer.polygon((int(width * 0.5), int(height * 0.75), int(width * 0.1), height, int(width * 0.9), height),
+                          fill=(0, 127, 127, 255))
 
     # Uncomment the following line to show the mask
     #plt.imshow(rounded_mask)
 
     # Make the new image, starting with all transparent
     result = PIL.Image.new('RGBA', original_image.size, (0, 0, 0, 0))
-    result.paste(original_image, (0, 0), mask=rounded_mask)
+    result.paste(original_image, (0, 0), mask=robot_mask)
     return result
 
 def get_images(directory=None):
