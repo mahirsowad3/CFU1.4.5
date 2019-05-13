@@ -53,7 +53,12 @@ def round_corners_one_image(original_image, percent_of_side=.3):
     return result
 
 
-def something_one_image(original_image, percent_of_side=.3):
+def robot_one_image(original_image):
+    """Creates a robot shaped masked over images.
+
+    original_image must be a PIL.Image
+    Returns a new PIL.Image with a robot mask.
+    """
 
     # start with transparent mask
     width,height = original_image.size
@@ -149,19 +154,18 @@ def round_corners_of_all_images(directory=None):
         new_image_filename = os.path.join(new_directory, filename + '.png')
         new_image.save(new_image_filename)
 
-def something_all_images(directory=None):
+def robot_mask_all_images(directory=None):
     """ Saves a modfied version of each image in directory.
 
     Uses current directory if no directory is specified.
-    Places images in subdirectory 'modified', creating it if it does not exist.
-    New image files are of type PNG and have transparent rounded corners.
+    Places images in subdirectory 'unique', creating it if it does not exist.
+    New image files are of type PNG and have a robot figure cut out on them.
     """
 
     if directory == None:
         directory = os.getcwd()  # Use working directory if unspecified
 
-    # Create a new directory 'modified'
-    # new_directory = os.path.join(directory, 'modified')
+    # Create a new directory 'unique'
     new_directory = os.path.join(os.getcwd(), 'unique')
     try:
         os.mkdir(new_directory)
@@ -177,14 +181,15 @@ def something_all_images(directory=None):
         print(n)
         filename, filetype = os.path.splitext(file_list[n])
 
-        # Round the corners with default percent of radius
+        # Cut ou the robot masks for the current image
         curr_image = image_list[n]
-        new_image = something_one_image(curr_image)
+        new_image = robot_one_image(curr_image)
 
         # Save the altered image, suing PNG to retain transparency
         new_image_filename = os.path.join(new_directory, filename + '.png')
         new_image.save(new_image_filename)
 
+
 images_dir = os.path.join(os.getcwd(), 'Images')
-#round_corners_of_all_images(images_dir)
-something_all_images(images_dir)
+round_corners_of_all_images(images_dir)
+robot_mask_all_images(images_dir)
